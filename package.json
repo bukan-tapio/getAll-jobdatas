@@ -1,0 +1,19 @@
+{
+  "name": "get_datajob",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google-cloud/storage": "^7.14.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "firebase": "^11.0.2",
+    "firebase-admin": "^13.0.1"
+  },
+  "type": "module"
+}
