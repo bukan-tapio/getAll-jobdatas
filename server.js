@@ -24,7 +24,6 @@ admin.initializeApp({
 });
 
 const app = express();
-const port = 8080;
 
 const db = admin.firestore();
 
@@ -51,6 +50,7 @@ app.get("/homePage", async (req, res) => {
   }
 });
 
+const port = process.env.port || 8080;
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
