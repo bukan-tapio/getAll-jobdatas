@@ -1,6 +1,7 @@
 import express from "express";
 import admin from "firebase-admin";
 import dotenv from "dotenv";
+import fs from "fs";
 
 dotenv.config();
 
@@ -8,7 +9,7 @@ dotenv.config();
 const serviceAccountPath =
   process.env.NODE_ENV === "production"
     ? "/secrets/authentication" // Production path (mounted volume in Cloud Run)
-    : "../firebase-key.json"; // Local development path
+    : "../project-key.json"; // Local development path
 
 if (!fs.existsSync(serviceAccountPath)) {
   throw new Error("Firebase credentials file not found at " + serviceAccountPath);
@@ -23,7 +24,7 @@ admin.initializeApp({
 });
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 const db = admin.firestore();
 
